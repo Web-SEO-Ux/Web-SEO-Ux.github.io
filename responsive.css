@@ -1,0 +1,169 @@
+/*Quotes*/
+@media (min-width:1200px) {
+    .quote-container::before {
+        display: block;
+        padding-left: 10px;
+        content: "";
+        width: 130px;
+        height: 100px;
+        position: absolute;
+        left: -130px;
+        top: -70px;
+        color: #7a7a7a;
+        background: url(res/images/quote-left.png) no-repeat;
+    }
+    .quote-container::after {
+        display: block;
+        padding-left: 10px;
+        content: "";
+        width: 130px;
+        height: 100px;
+        position: absolute;
+        right: -150px;
+        bottom: -70px;
+        color: #7a7a7a;
+        background: url(res/images/quote-right.png) no-repeat;
+    }
+}
+@media (max-width:1024px) {
+    body {
+        font-size:13px;
+    }
+    .main-text {
+        text-transform: uppercase;
+        font-size:2.5rem;
+        line-height: 1;
+      }
+      .sub-text {
+        font-size:1.4rem;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      .phone-number {
+        font-size:2.5rem;
+      }
+      .title-text {
+        font-size:1.2rem;
+      }
+      .normal-text {
+        font-size:1rem;
+      }
+      .small-text {
+        font-size: 0.5rem;
+        color: #fff;
+        line-height: 1;
+      }
+}
+
+@media (max-width:991px) {
+    .about-subtext {
+        width: 60%;
+    }
+    .title-text {
+        font-size: 0.8rem;
+    }
+    .main-text {
+        font-size: 2rem;
+    }
+    .sub-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width:767px) {
+    .contact-aside {
+        max-width: 100%;
+        padding-left: 30px;
+        padding-top: 40px;
+    }
+    .contact-section {
+        background: url(res/images/roughEdge.png), url(res/images/mapBg.jpg);
+        background-position: top center, center center;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100%, cover;
+        color: white;
+        padding: 0;
+        background-position: center 178px, -433px 178px;
+        background-color: #1e1e1e;
+    }
+    .card {
+        max-width: 300px;
+        margin: auto;
+    }
+    .project-title, .project-subtext {
+        width: 100%;
+    }
+    .shaded-right::before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        margin: auto;
+        right: 0;
+        background: transparent url(res/images/dust-overlay.png) repeat;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        opacity: 0.8;
+        background-size: contain;
+        text-align: center;
+      }
+      .contact-section {
+        padding: 0px 0 30px 0;
+      }
+      .about-subtext {
+        width: 100%;
+    }
+    .about-title {
+        width: 100%;
+    }
+    .two-col {
+        column-count: 1;
+    }
+    img.hero-logo {
+        max-height: 120px;
+    }
+    .section-footer-left {
+        width: 100%;
+    }
+}
+@media (max-width:576px) {
+    .quote-container {
+        max-width: 100%;
+    }
+    img.hero-logo {
+        max-height: 100px;
+    }
+    .container {
+        max-width: 85%;
+    }
+    .mobile-full {
+        margin-left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .contact-section .w-25 {
+        width:100% !important;
+    }
+    .contact-aside {
+        padding-left: 0;
+    }
+    .contact-section {
+        background: url(res/images/roughEdge.png), url(res/images/mapBg.jpg);
+        background-position: top center, center center;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100%, cover;
+        color: white;
+        padding: 0;
+        background-position: center 178px, -590px 218px;
+        background-color: #1e1e1e;
+    }
+}
+@media (max-width:420px) {
+    img.hero-logo {
+        max-height: 90px;
+    }
+}

@@ -1,2 +1,5 @@
-let test="message";
-document.getElementById("message").innerHTML = test;
+$("nav a").click(
+    function(event) {
+       event.preventDefault();
+    }
+ );
