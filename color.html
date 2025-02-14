@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto & Click Change Colour</title>
+    <style>
+        body {
+            margin:0;
+            padding:0;
+            overflow: hidden;
+        }
+        #colorBox {
+            width: 100%;
+            height: 100vh;
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="colorBox"></div>
+
+    <script>
+        const oldColors = ["red", "blue", "green", "yellow", "purple", "orange"];
+        const energizingPastels = [
+            "#FFADAD", // Soft Red (Passion, Warmth)
+            "#FFD6A5", // Pastel Orange (Creativity, Joy)
+            "#FDFFB6", // Light Yellow (Optimism, Cheerfulness)
+            "#FFC6FF", // Soft Magenta (Playfulness, Energy)
+            "#FFB5E8", // Bubblegum Pink (Fun, Youthfulness)
+            "#A0C4FF", // Soft Blue (Freshness, Clarity)
+            "#BDB2FF", // Lavender (Imagination, Inspiration)
+            "#9BF6FF", // Bright Cyan (Excitement, Alertness)
+        ];
+        const relaxingPastels = [
+            "#A8DADC", // Muted Teal (Tranquility, Balance)
+            "#F1FAEE", // Soft White (Purity, Calm)
+            "#BFD3C1", // Pastel Green (Nature, Harmony)
+            "#C3B1E1", // Lilac (Gentleness, Softness)
+            "#D5C7BC", // Beige Grey (Warmth, Stability)
+            "#E3D5CA", // Light Coffee (Cozy, Grounded)
+            "#EAE2B7", // Soft Gold (Serenity, Comfort)
+            "#C6DEF1", // Cool Blue (Peace, Relaxation)
+        ];
+        const cozyPastels = [
+            "#F4A5AE", // Soft Pink (Affection, Love)
+            "#E9C46A", // Warm Sand (Earthy, Nostalgic)
+            "#F6BD60", // Pastel Gold (Comfort, Home)
+            "#E5D4CE", // Peach Beige (Softness, Warmth)
+            "#D4A5A5", // Rosewood (Calm, Familiarity)
+            "#F7E1D7", // Muted Peach (Hug-like Comfort)
+            "#EDE7F6", // Faint Lavender (Gentle, Restful)
+        ];
+        const refreshingPastels = [
+            "#9DF1DF", // Mint Green (Freshness, Renewal)
+            "#ACE7EF", // Sky Blue (Coolness, Serenity)
+            "#B7E4C7", // Soft Sea Green (Nature, Restoration)
+            "#E4F9F5", // Aqua Mist (Breezy, Lightness)
+            "#D4E2D4", // Faded Green (Healing, Calmness)
+            "#B4DFE5", // Light Cyan (Cooling, Pure)
+            "#B8E0D2", // Sage Green (Refreshing, Grounding)
+        ];
+        const playfulPastels = [
+            "#FFB5E8", // Bubblegum Pink (Joy, Energy)
+            "#FF9CEE", // Cotton Candy (Fun, Imagination)
+            "#DDBCFD", // Soft Purple (Magic, Creativity)
+            "#ACF39D", // Pastel Lime (Zest, Freshness)
+            "#F4D06F", // Sunshine Yellow (Happiness, Play)
+            "#FFDAC1", // Soft Peach (Cheerful, Sweet)
+            "#9EE09E", // Green Apple (Lively, Active)
+        ];
+        const allPastels = [...energizingPastels, ...relaxingPastels, ...cozyPastels, ...refreshingPastels, ...playfulPastels];
+
+
+        let index = 0;
+        const intervalTime = 2000; // Change every 2 seconds
+
+        function changeColor() {
+            document.getElementById("colorBox").style.backgroundColor = allPastels[index];
+            index = (index + 1) % allPastels.length;
+        }
+
+        // Auto-change every interval
+        let colorInterval = setInterval(changeColor, intervalTime);
+
+        // Change color on click
+        document.getElementById("colorBox").addEventListener("click", function() {
+            changeColor();
+
+            // Reset the interval to ensure a consistent delay after a manual change
+            clearInterval(colorInterval);
+            colorInterval = setInterval(changeColor, intervalTime);
+        });
+    </script>
+
+</body>
+</html>
